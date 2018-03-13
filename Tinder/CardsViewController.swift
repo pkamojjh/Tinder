@@ -15,6 +15,9 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+        
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(panGestureRecognizer)
 
         // Do any additional setup after loading the view.
     }
@@ -54,6 +57,17 @@ class CardsViewController: UIViewController {
             imageView.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y)
             imageView.transform = CGAffineTransform(rotationAngle: CGFloat(0.0))
             print("Gesture ended")
+        }
+    }
+    @IBAction func didTap(_ sender: Any) {
+        self.performSegue(withIdentifier: "toProfile", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ProfileViewController {
+            if let image = imageView.image {
+                destination.myImage = image
+            }
         }
     }
     

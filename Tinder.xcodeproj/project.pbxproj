@@ -15,6 +15,7 @@
 		D121E4C720584A84008AA923 /* TinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D121E4C620584A84008AA923 /* TinderTests.swift */; };
 		D121E4D220584A84008AA923 /* TinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D121E4D120584A84008AA923 /* TinderUITests.swift */; };
 		D121E4E020584B20008AA923 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D121E4DF20584B20008AA923 /* CardsViewController.swift */; };
+		D121E4E22058673F008AA923 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D121E4E12058673F008AA923 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D121E4D120584A84008AA923 /* TinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderUITests.swift; sourceTree = "<group>"; };
 		D121E4D320584A84008AA923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D121E4DF20584B20008AA923 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		D121E4E12058673F008AA923 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D121E4BA20584A83008AA923 /* LaunchScreen.storyboard */,
 				D121E4BD20584A83008AA923 /* Info.plist */,
 				D121E4DF20584B20008AA923 /* CardsViewController.swift */,
+				D121E4E12058673F008AA923 /* ProfileViewController.swift */,
 			);
 			path = Tinder;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				D121E4B420584A83008AA923 /* ViewController.swift in Sources */,
 				D121E4B220584A83008AA923 /* AppDelegate.swift in Sources */,
+				D121E4E22058673F008AA923 /* ProfileViewController.swift in Sources */,
 				D121E4E020584B20008AA923 /* CardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

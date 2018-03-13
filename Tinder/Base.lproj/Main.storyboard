@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,28 +19,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="flN-Hz-OcB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="flN-Hz-OcB">
                                 <rect key="frame" x="0.0" y="32" width="375" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="oTR-Vq-XDR"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="iCZ-EV-r70">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="iCZ-EV-r70">
                                 <rect key="frame" x="59" y="579" width="257" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="gFB-Bc-EtH"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="Vfv-70-o1d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="Vfv-70-o1d">
                                 <rect key="frame" x="16" y="180" width="343" height="382"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="GCx-CU-u3D" appends="YES" id="9UW-X7-biI"/>
+                                    <outletCollection property="gestureRecognizers" destination="VEC-uy-AB8" appends="YES" id="5lJ-xf-h8f"/>
                                 </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="flN-Hz-OcB" firstAttribute="centerX" secondItem="Vfv-70-o1d" secondAttribute="centerX" id="41j-Pf-lfb"/>
+                            <constraint firstItem="Vfv-70-o1d" firstAttribute="centerX" secondItem="iCZ-EV-r70" secondAttribute="centerX" id="6Bn-W4-lOm"/>
+                            <constraint firstItem="iCZ-EV-r70" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="BqZ-rV-yLd"/>
+                            <constraint firstItem="iCZ-EV-r70" firstAttribute="top" secondItem="Vfv-70-o1d" secondAttribute="bottom" constant="17" id="KGX-Zo-Bl7"/>
+                            <constraint firstAttribute="trailing" secondItem="flN-Hz-OcB" secondAttribute="trailing" id="Ufv-gz-F9K"/>
+                            <constraint firstItem="Vfv-70-o1d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XH3-ME-tEz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iCZ-EV-r70" secondAttribute="bottom" constant="106" id="Yoi-Lf-hay"/>
+                            <constraint firstItem="flN-Hz-OcB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bQr-hq-nI1"/>
+                            <constraint firstItem="Vfv-70-o1d" firstAttribute="top" secondItem="flN-Hz-OcB" secondAttribute="bottom" constant="64" id="mwV-N5-OPa"/>
+                            <constraint firstItem="flN-Hz-OcB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-12" id="say-fE-53d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Vfv-70-o1d" id="kc9-bU-pVh"/>
+                        <segue destination="An1-go-1A4" kind="presentation" identifier="toProfile" id="tcL-sN-kjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,13 +66,56 @@
                         <action selector="didPan:" destination="BYZ-38-t0r" id="IpF-FA-ig9"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="VEC-uy-AB8">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="ZXx-e8-SdL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="xip-4L-2cL">
+            <objects>
+                <viewController id="An1-go-1A4" customClass="ProfileViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G20-sT-44Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-Eh-hVy">
+                                <rect key="frame" x="41" y="247" width="292" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iEI-oM-5lq" appends="YES" id="uO3-KR-TTy"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="Ewc-Bc-qWb">
+                                <rect key="frame" x="0.0" y="30" width="375" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VJw-lv-S3j"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="cJU-Eh-hVy" id="ahe-1p-yiz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wzv-Sj-GaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="iEI-oM-5lq">
+                    <connections>
+                        <action selector="didTap:" destination="An1-go-1A4" id="hPv-sp-ARj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="131.52709359605913"/>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
         <image name="ryan" width="449" height="514"/>
     </resources>
 </document>
